@@ -68,6 +68,9 @@ jobs:
           echo "PR Merge Commit: $pr_merge_commit"
           echo "PR Base Branch: $pr_base_branch"
 
+          # Stash any local changes
+          git stash
+
           # Create a new branch from the base branch
           git checkout -b mirror-pr-$pr_number origin/$pr_base_branch
 
@@ -99,6 +102,9 @@ jobs:
           # Clean up the branch locally
           git checkout master
           git branch -D mirror-pr-$pr_number
+
+          # Apply stashed changes
+          git stash pop || true
 
         done < merged_prs.txt
 
