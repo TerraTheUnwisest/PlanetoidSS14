@@ -39,3 +39,21 @@
   name: PigeonBeans - Sunset
   path:
     path: /Audio/Jukebox/sunset.ogg
+
+- type: jukebox
+  id: sunset
+  name: Mugo - Infiltrating the Intergalactic Space Station
+  path:
+    path: /Audio/Jukebox/infiltrating.ogg
+
+- type: jukebox
+  id: sunset
+  name: Hubismal - Tintin on the Moon (Thalassophobia Remix)
+  path:
+    path: /Audio/Jukebox/title3thal.ogg
+
+- type: jukebox
+  id: spaceahole
+  name: Chris Remo (Idle Thumbs) - Space Asshole
+  path:
+    path: /Audio/Jukebox/space-asshole.ogg
