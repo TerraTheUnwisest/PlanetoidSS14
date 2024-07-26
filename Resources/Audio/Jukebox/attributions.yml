@@ -25,19 +25,3 @@
   license: "CC-BY-SA-3.0"
   copyright: "Sunset by PigeonBeans. Exported in Mono OGG."
   source: "https://soundcloud.com/pigeonbeans/sunset"
-
-- files: ["infiltrating.ogg"]
-  license: "Custom"
-  copyright: "Mugo"
-  source: "https://www.youtube.com/watch?v=LO1JSpyxWKg"
-
-- files: ["title3thal.ogg"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "Hubismal"
-  source: "https://www.youtube.com/watch?v=D-Fe8ECSYoo"
-
-- files: ["space_asshole.ogg"]
-  license: "Custom"
-  copyright: "Space Asshole by Chris Remo is used with special permission from the author, under the condition that the project remains non-commercial and open source. The author also requested that a link to his bandcamp be included: https://chrisremo.bandcamp.com/"
-  source: "https://idlethumbs.bandcamp.com/track/space-asshole"
-  # The source is a direct link the the track, but not the "main" bandcamp of the author. Hence the link is also included separately in the copyright.
