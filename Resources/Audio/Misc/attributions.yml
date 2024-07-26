@@ -18,7 +18,7 @@
   copyright: "Taken from ParadiseStation13."
   source: "https://github.com/ParadiseSS13/Paradise/blob/master/sound/effects/dimensional_rend.ogg"
 
-  - files: ["imhere2.ogg"]
+- files: ["imhere2.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from ParadiseStation13."
   source: "https://github.com/ParadiseSS13/Paradise/blob/master/sound/hallucinations/im_here2.ogg"
