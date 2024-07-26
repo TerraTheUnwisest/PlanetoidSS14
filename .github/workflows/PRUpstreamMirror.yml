@@ -94,9 +94,11 @@ jobs:
             git branch -D mirror-pr-$pr_number
           fi
 
-          # Clean up the branch locally
+          # Clean up the branch locally only if the PR creation failed
           git checkout master
-          git branch -D mirror-pr-$pr_number
+          if [ "$pr_url" == "null" ]; then
+            git branch -D mirror-pr-$pr_number
+          fi
 
         done < merged_prs.txt
 
