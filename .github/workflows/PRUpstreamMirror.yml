@@ -91,14 +91,10 @@ jobs:
           else
             echo "Failed to create PR for $pr_number"
             git push origin --delete mirror-pr-$pr_number
-            git branch -D mirror-pr-$pr_number
           fi
 
-          # Clean up the branch locally only if the PR creation failed
+          # Ensure we are on the main branch for the next iteration
           git checkout master
-          if [ "$pr_url" == "null" ]; then
-            git branch -D mirror-pr-$pr_number
-          fi
 
         done < merged_prs.txt
 
