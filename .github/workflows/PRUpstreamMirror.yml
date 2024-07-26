@@ -15,6 +15,7 @@ jobs:
       with:
         repository: TerraTheUnwisest/PlanetoidSS14
         token: ${{ secrets.GH_PAT }}
+        fetch-depth: 0 # Fetch all history for all branches
 
     - name: Fetch PRs from upstream
       run: |
@@ -58,15 +59,20 @@ jobs:
           pr_title=$(echo $pr | jq -r '.title')
           pr_body=$(echo $pr | jq -r '.body')
           pr_merge_commit=$(echo $pr | jq -r '.merge_commit_sha')
+          pr_base_branch=$(echo $pr | jq -r '.base.ref')
 
           # Debugging logs
           echo "PR Number: $pr_number"
           echo "PR Title: $pr_title"
           echo "PR Body: $pr_body"
           echo "PR Merge Commit: $pr_merge_commit"
+          echo "PR Base Branch: $pr_base_branch"
 
-          # Create a new branch based on the merge commit
-          git checkout -b mirror-pr-$pr_number $pr_merge_commit
+          # Create a new branch from the base branch
+          git checkout -b mirror-pr-$pr_number origin/$pr_base_branch
+
+          # Cherry-pick the merge commit of the PR
+          git cherry-pick $pr_merge_commit
 
           # Push the new branch to the downstream repository
           git push origin mirror-pr-$pr_number
