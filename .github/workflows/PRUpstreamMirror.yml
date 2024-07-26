@@ -15,7 +15,6 @@ jobs:
       with:
         repository: TerraTheUnwisest/PlanetoidSS14
         token: ${{ secrets.GH_PAT }}
-        fetch-depth: 0 # Fetch all history for all branches
 
     - name: Fetch PRs from upstream
       run: |
@@ -59,23 +58,19 @@ jobs:
           pr_title=$(echo $pr | jq -r '.title')
           pr_body=$(echo $pr | jq -r '.body')
           pr_merge_commit=$(echo $pr | jq -r '.merge_commit_sha')
-          pr_base_branch=$(echo $pr | jq -r '.base.ref')
 
           # Debugging logs
           echo "PR Number: $pr_number"
           echo "PR Title: $pr_title"
           echo "PR Body: $pr_body"
           echo "PR Merge Commit: $pr_merge_commit"
-          echo "PR Base Branch: $pr_base_branch"
 
-          # Stash any local changes
-          git stash
+          # Ensure we are on the main branch and reset any changes
+          git checkout master
+          git reset --hard origin/master
 
-          # Create a new branch from the base branch
-          git checkout -b mirror-pr-$pr_number origin/$pr_base_branch
-
-          # Cherry-pick the merge commit of the PR
-          git cherry-pick $pr_merge_commit
+          # Create a new branch based on the merge commit
+          git checkout -b mirror-pr-$pr_number $pr_merge_commit
 
           # Push the new branch to the downstream repository
           git push origin mirror-pr-$pr_number
@@ -91,7 +86,7 @@ jobs:
           pr_url=$(echo $pr_response | jq -r '.html_url')
           if [ "$pr_url" != "null" ]; then
             echo "Successfully created PR: $pr_url"
-            # Add PR number to mirrored_prs.txt
+            # Add PR number to mirrored PRs tracking file
             echo "$pr_number" >> mirrored_prs.txt
           else
             echo "Failed to create PR for $pr_number"
@@ -102,9 +97,6 @@ jobs:
           # Clean up the branch locally
           git checkout master
           git branch -D mirror-pr-$pr_number
-
-          # Apply stashed changes
-          git stash pop || true
 
         done < merged_prs.txt
 
