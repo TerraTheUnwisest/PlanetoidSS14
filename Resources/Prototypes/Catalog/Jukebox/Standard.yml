@@ -29,13 +29,24 @@
     path: /Audio/Jukebox/drifting.ogg
 
 - type: jukebox
-  id: starlight
-  name: Qwertyquerty - Starlight
+  id: infiltratingiss
+  name: Mugo - Infiltrating Intergalactic SS
   path:
-    path: /Audio/Jukebox/starlight.ogg
+    path: /Audio/Jukebox/infiltrating.ogg
 
 - type: jukebox
-  id: sunset
-  name: PigeonBeans - Sunset
+  id: title3thal
+  name: Hubismal - Tintin on the Moon (Thalassophobia)
   path:
-    path: /Audio/Jukebox/sunset.ogg
+    path: /Audio/Jukebox/title3thal.ogg
+
+- type: jukebox
+  id: spaceasshole
+  name: Idle Thumbs - Space Asshole
+  path:
+    path: /Audio/Jukebox/spaceasshole.ogg
+- type: jukebox
+  id: spaceahole
+  name: Chris Remo - Space Asshole
+  path:
+    path: /Audio/Jukebox/spaceahole.ogg
