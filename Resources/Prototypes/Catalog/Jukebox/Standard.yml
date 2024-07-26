@@ -46,7 +46,7 @@
   path:
     path: /Audio/Jukebox/spaceasshole.ogg
 - type: jukebox
-  id: spaceasshole
+  id: spaceahole
   name: Chris Remo - Space Asshole
   path:
     path: /Audio/Jukebox/spaceahole.ogg
