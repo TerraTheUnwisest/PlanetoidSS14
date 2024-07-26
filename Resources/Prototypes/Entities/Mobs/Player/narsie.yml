@@ -22,9 +22,14 @@
     layers:
     - state: spawn
       shader: unshaded
-  # spawn animation lasts 3.5 seconds
+  - type: AnnounceOnSpawn
+    message: narsie-veil
+    sender: narsie-veil-sender
+    sound:
+      path: /Audio/Misc/dimensionalrend.ogg
+    color: red
   - type: TimedDespawn
-    lifetime: 3.5
+    lifetime: 5
   - type: SpawnOnDespawn
     prototype: MobNarsie
 
@@ -36,7 +41,7 @@
     message: narsie-has-risen
     sender: narsie-has-risen-sender
     sound:
-      path: /Audio/Misc/narsie_rises.ogg
+      path: /Audio/Misc/imhere2.ogg
     color: red
   - type: CargoSellBlacklist
   # big nar'sie needs to see the universe

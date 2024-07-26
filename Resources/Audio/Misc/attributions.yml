@@ -13,10 +13,15 @@
   copyright: "Taken from SergeQuadrado via freesound.org, edit and mono by TheShuEd"
   source: "https://freesound.org/people/SergeQuadrado/sounds/683504/"
 
-- files: ["narsie_rises.ogg"]
+- files: ["dimensionalrend.ogg"]
   license: "CC-BY-SA-3.0"
-  copyright: "Taken from TG station."
-  source: "https://github.com/tgstation/tgstation/blob/b44fcdedfb7c7d8425bd75b9caf71644a86375d1/sound/creatures/narsie_rises.ogg"
+  copyright: "Taken from ParadiseStation13."
+  source: "https://github.com/ParadiseSS13/Paradise/blob/master/sound/effects/dimensional_rend.ogg"
+
+  - files: ["imhere2.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from ParadiseStation13."
+  source: "https://github.com/ParadiseSS13/Paradise/blob/master/sound/hallucinations/im_here2.ogg"
 
 - files: ["ratvar_rises.ogg"]
   license: "CC-BY-SA-3.0"
