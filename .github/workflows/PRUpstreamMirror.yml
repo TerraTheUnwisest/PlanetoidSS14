@@ -68,14 +68,11 @@ jobs:
           echo "PR Merge Commit: $pr_merge_commit"
           echo "PR Base Branch: $pr_base_branch"
 
-          # Stash any local changes
-          git stash
-
           # Create a new branch from the base branch
           git checkout -b mirror-pr-$pr_number origin/$pr_base_branch
 
           # Cherry-pick the merge commit of the PR
-          git cherry-pick $pr_merge_commit || git cherry-pick --abort
+          git cherry-pick $pr_merge_commit
 
           # Push the new branch to the downstream repository
           git push origin mirror-pr-$pr_number
@@ -91,7 +88,7 @@ jobs:
           pr_url=$(echo $pr_response | jq -r '.html_url')
           if [ "$pr_url" != "null" ]; then
             echo "Successfully created PR: $pr_url"
-            # Add PR number to mirrored PRs tracking file
+            # Add PR number to mirrored_prs.txt
             echo "$pr_number" >> mirrored_prs.txt
           else
             echo "Failed to create PR for $pr_number"
@@ -102,9 +99,6 @@ jobs:
           # Clean up the branch locally
           git checkout master
           git branch -D mirror-pr-$pr_number
-
-          # Pop the stash
-          git stash pop || true
 
         done < merged_prs.txt
 
