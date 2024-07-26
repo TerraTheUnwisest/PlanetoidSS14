@@ -21,16 +21,7 @@ jobs:
         git remote add upstream https://github.com/space-wizards/space-station-14.git
         git fetch upstream
 
-    - name: Create mirrored PR tracking file if not exists
-      run: |
-        if [ ! -f mirrored_prs.txt ]; then
-          touch mirrored_prs.txt
-        fi
-        git add mirrored_prs.txt
-        git commit -m "Ensure mirrored PRs tracking file exists" || true
-        git push origin master
-
-    - name: List merged PRs
+    - name: List merged PRs from upstream
       id: list_prs
       run: |
         curl -H "Authorization: token ${{ secrets.GH_PAT }}" \
@@ -39,13 +30,19 @@ jobs:
           | jq '.[] | select(.merged_at != null) | .number' > merged_prs.txt
         cat merged_prs.txt
 
+    - name: List existing PRs in downstream
+      id: existing_prs
+      run: |
+        curl -H "Authorization: token ${{ secrets.GH_PAT }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/TerraTheUnwisest/PlanetoidSS14/pulls?state=open \
+          | jq -r '.[] | select(.head.ref | startswith("mirror-pr-")) | .head.ref' > existing_prs.txt
+        cat existing_prs.txt
+
     - name: Process merged PRs
       run: |
-        # Track already mirrored PRs
-        mirrored_prs=$(cat mirrored_prs.txt || echo "")
-
         while read pr_number; do
-          if echo "$mirrored_prs" | grep -Fxq "$pr_number"; then
+          if grep -Fxq "mirror-pr-$pr_number" existing_prs.txt; then
             echo "PR $pr_number already mirrored, skipping..."
             continue
           fi
@@ -86,8 +83,6 @@ jobs:
           pr_url=$(echo $pr_response | jq -r '.html_url')
           if [ "$pr_url" != "null" ]; then
             echo "Successfully created PR: $pr_url"
-            # Add PR number to mirrored PRs tracking file
-            echo "$pr_number" >> mirrored_prs.txt
           else
             echo "Failed to create PR for $pr_number"
             git push origin --delete mirror-pr-$pr_number
@@ -98,12 +93,6 @@ jobs:
 
         done < merged_prs.txt
 
-    - name: Push updates to mirrored PRs tracking file
-      run: |
-        git add mirrored_prs.txt
-        git commit -m "Update mirrored PRs tracking file"
-        git push origin master
-
     - name: Clean up
       run: |
-        rm merged_prs.txt
+        rm merged_prs.txt existing_prs.txt
