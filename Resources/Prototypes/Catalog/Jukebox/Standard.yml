@@ -29,6 +29,18 @@
     path: /Audio/Jukebox/drifting.ogg
 
 - type: jukebox
+  id: pwmur
+  name: Alexander Divine - Phoron will make us rich!
+  path:
+    path: /Audio/Jukebox/pwmur.ogg
+
+- type: jukebox
+  id: spaceahole
+  name: Idle Thumbs - Space Asshole
+  path:
+    path: /Audio/Jukebox/space_asshole.ogg
+
+- type: jukebox
   id: starlight
   name: Qwertyquerty - Starlight
   path:
