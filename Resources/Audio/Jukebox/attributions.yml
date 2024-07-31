@@ -31,7 +31,7 @@
   copyright: "phoron will make us rich by Alexander Divine."
   source: "https://soundcloud.com/alexanderdivine/phoron-will-make-us-rich"
 
-  - files: ["space_asshole.ogg"]
+- files: ["space_asshole.ogg"]
   license: "Custom"
   copyright: "Space Asshole by Chris Remo is used with special permission from the author, under the condition that the project remains non-commercial and open source. The author also requested that a link to his bandcamp be included: https://chrisremo.bandcamp.com/"
   source: "https://idlethumbs.bandcamp.com/track/space-asshole"
