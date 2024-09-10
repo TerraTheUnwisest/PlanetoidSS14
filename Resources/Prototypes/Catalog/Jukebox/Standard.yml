@@ -51,3 +51,18 @@
   name: PigeonBeans - Sunset
   path:
     path: /Audio/Jukebox/sunset.ogg
+    
+- type: jukebox
+  id: nuclear
+  name: Micheal Oldfield - Nuclear
+  path:
+    path: /Audio/Jukebox/Nuclear.ogg
+    
+- type: jukebox
+  id: cubanpete
+  name: Joseph Norman - Cuban Pete
+  path:
+    path: /Audio/Jukebox/Cuban-Pete.ogg
+    
+    
+    
