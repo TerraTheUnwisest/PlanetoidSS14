@@ -133,6 +133,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Roslyn", "Roslyn", "{7844DA
 		RobustToolbox\Robust.Roslyn.Shared\Robust.Roslyn.Shared.props = RobustToolbox\Robust.Roslyn.Shared\Robust.Roslyn.Shared.props
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Robust.Xaml", "RobustToolbox\Robust.Xaml\Robust.Xaml.csproj", "{5C05B9B4-6AFE-4884-AA6A-5A26C0FFF2F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -444,6 +446,14 @@ Global
 		{83F510FE-9B50-4D96-AFAB-CC13998D6AFE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{83F510FE-9B50-4D96-AFAB-CC13998D6AFE}.Tools|Any CPU.ActiveCfg = Tools|Any CPU
 		{83F510FE-9B50-4D96-AFAB-CC13998D6AFE}.Tools|Any CPU.Build.0 = Tools|Any CPU
+		{5C05B9B4-6AFE-4884-AA6A-5A26C0FFF2F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C05B9B4-6AFE-4884-AA6A-5A26C0FFF2F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C05B9B4-6AFE-4884-AA6A-5A26C0FFF2F6}.DebugOpt|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C05B9B4-6AFE-4884-AA6A-5A26C0FFF2F6}.DebugOpt|Any CPU.Build.0 = Debug|Any CPU
+		{5C05B9B4-6AFE-4884-AA6A-5A26C0FFF2F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C05B9B4-6AFE-4884-AA6A-5A26C0FFF2F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C05B9B4-6AFE-4884-AA6A-5A26C0FFF2F6}.Tools|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C05B9B4-6AFE-4884-AA6A-5A26C0FFF2F6}.Tools|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,14 +1,13 @@
-<!-- Please read these guidelines before opening your PR: https://docs.spacestation14.io/en/getting-started/pr-guideline -->
-<!-- The text between the arrows are comments - they will not be visible on your PR. -->
+<!-- Guidelines: https://docs.spacestation14.io/en/getting-started/pr-guideline -->
 
 ## About the PR
-<!-- What did you change in this PR? -->
+<!-- What did you change? -->
 
 ## Why / Balance
-<!-- Why was it changed? Link any discussions or issues here. Please discuss how this would affect game balance. -->
+<!-- Discuss how this would affect game balance or explain why it was changed. Link any relevant discussions or issues. -->
 
 ## Technical details
-<!-- If this is a code change, summarize at high level how your new code works. This makes it easier to review. -->
+<!-- Summary of code changes for easier review. -->
 
 ## Media
 <!--
@@ -21,6 +20,9 @@ If you're unsure whether your PR will require media, ask a maintainer.
 - [ ] I have added screenshots/videos to this PR showcasing its changes ingame, **or** this PR does not have anything it can show.
 
 **Changelog**
+<!-- Add a Changelog entry to make players aware of new features or changes that could affect gameplay.
+Make sure to read the guidelines and take this Changelog template out of the comment block in order for it to show up.
+Changelog must have a :cl: symbol, so the bot recognizes the changes and adds them to the game's changelog. -->
 <!--
 Make players aware of new features and changes that could affect how they play the game by adding a Changelog entry. Please read the Changelog guidelines located at: https://docs.spacestation14.io/en/getting-started/pr-guideline#changelog
 -->
